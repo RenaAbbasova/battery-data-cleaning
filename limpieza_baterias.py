@@ -1,7 +1,10 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv("battery_readings_raw.csv")
+ruta_entrada = "data_lake/raw/baterías/battery_readings_raw.csv"
+ruta_salida = "data_lake/proceesed/battery_data_clean.csv"
+
+df = pd.read_csv(ruta_entrada)
 
 # print(df.shape)
 # print(df.dtypes)
@@ -31,7 +34,8 @@ print("Datos duplicados: ", df.duplicated().sum())
 df = df.drop_duplicates()
 df["vehicle_id"] = df["vehicle_id"].str.upper()
 print(df.head(10))
-df.to_csv("battery_data_clean", index=False)
+df.to_csv(ruta_salida, index=False)
 soh_vehiculo = df.groupby("vehicle_id")["state_of_health_pct"].mean().sort_values(ascending=True)
 print("Promedio de estado de salud por vehículo:", soh_vehiculo)
 print("Datos limpios guardados en battery_data_clean.csv")
+print("Datos limpios guardados en:", ruta_salida)
