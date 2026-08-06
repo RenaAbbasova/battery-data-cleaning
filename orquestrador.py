@@ -3,6 +3,7 @@ scripts = [
     "pipeline_fabrica_datos.py",
     "consumidor_dashboard.py",
     "consumidor_ml_features.py",
+    "agente_recomendaciones.py",
     "consumidor_anonymized.py"
 ]
 
