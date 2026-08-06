@@ -1,5 +1,5 @@
 #Battery data cleaning
-#Que hice
+#Qué hace
 - Normaliza timestamps de dos formatos distintos (dd/mm/yyyy vs ISO)
 - Unifica temperatura de Fahrenheit a Celsius
 - Detecta y trata outliers imposibles (state of health > 100%)
