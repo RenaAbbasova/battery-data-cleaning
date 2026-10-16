@@ -5,7 +5,7 @@
 A small, complete data pipeline for **electric-vehicle battery telemetry**: messy multi-manufacturer
 readings go in; clean data, a per-vehicle **state-of-health trend and 6-month forecast**, an anonymized
 dataset and plain-language recommendations come out. Every step is orchestrated with **Prefect**, guarded by a
-**quality gate**, and covered by **77 automated tests**.
+**quality gate**, exposed through a **FastAPI REST API**, and covered by **100 automated tests**.
 
 > **The data is synthetic.** A generator simulates two manufacturers and then breaks the data on purpose in the
 > ways real telemetry breaks. The pipeline is what this project demonstrates. The numbers below prove that it works
@@ -36,6 +36,9 @@ flowchart LR
   F --> RE[("consumers / recommendations")]
   F --> AN[("consumers / anonymized")]
   FC --> FO[("consumers / forecast")]
+  D --> API["REST API<br/>FastAPI"]
+  FO --> API
+  RE --> API
 ```
 
 | Layer | Folder | What it holds |
@@ -95,12 +98,52 @@ pip install -e ".[dev]"
 
 python -m battery_pipeline run                            # run the whole pipeline
 python -m battery_pipeline run --vehicles 40 --days 365   # a bigger fleet
-python -m pytest                                          # 77 tests
+python -m battery_pipeline serve                          # REST API at http://127.0.0.1:8000/docs
+python -m pytest                                          # 100 tests
 python -m battery_pipeline schedule --cron "0 6 * * *"    # run every day at 06:00 (stays running)
 ```
 
 Outputs appear in `data/` and `reports/`. Set `ANON_SALT` to your own secret for the anonymized file
 (otherwise a demo salt is used and a warning is shown).
+
+## REST API
+
+The pipeline produces the data; a small **FastAPI** service serves it. It never computes anything: it reads the files the
+pipeline wrote (and re-reads them when a new run replaces them), so an API client sees exactly the numbers in the reports.
+
+```bash
+python -m battery_pipeline serve        # then open http://127.0.0.1:8000/docs
+```
+
+| Endpoint | Returns |
+|---|---|
+| `GET /health` | Is the service up, has the pipeline produced data, and is it synthetic? (never needs a key) |
+| `GET /vehicles?status=WATCH&limit=10` | Vehicles, worst degradation first, optionally filtered by status |
+| `GET /vehicles/{id}/health?lang=en` | State of health, degradation rate, 6-month outlook and a recommendation (`es` / `en`) |
+| `GET /vehicles/{id}/forecast?days=90` | State-of-health forecast with its band, 1 to 180 days |
+| `GET /fleet/summary` | Status counts, fastest / slowest degrading vehicle and how the forecast was evaluated |
+| `GET /quality` | The data-quality report of the last run |
+
+```bash
+curl "http://127.0.0.1:8000/vehicles/B-006/health?lang=en"
+```
+
+```json
+{
+  "vehicle_id": "B-006",
+  "status": "WATCH",
+  "soh_current": 88.38,
+  "degradation_rate_pct_30d": 1.5,
+  "soh_in_6_months": 79.17,
+  "temp_max": 49.52,
+  "days_active": 180,
+  "recommendation": "Your battery is on watch. Take care with charging and temperature conditions. It reached 50 °C: avoid charging or parking in direct sun."
+}
+```
+
+Behaviour worth knowing: a malformed ID (`A-1`) is a **422** and an unknown one a **404**, never a server error; if the
+pipeline has not run yet the data endpoints answer **503** with the command to run it; IDs are case-insensitive. If you set
+`API_KEY`, every endpoint except `/health` requires it in the `X-API-Key` header.
 
 ## Design decisions
 
@@ -114,6 +157,8 @@ Outputs appear in `data/` and `reports/`. Set `ANON_SALT` to your own secret for
 - **Rules before AI for the recommendations.** Every sentence traces back to a number and a threshold. The structured output
   (status + reasons) is exactly what an LLM would get as context if one is added later.
 - **All thresholds in `config.py`.** Anyone can see and challenge a business rule without reading the logic.
+- **An API that only reads.** The pipeline is the single place where numbers are computed; the API cannot disagree with the reports.
+- **Clear error codes.** 422 for a malformed request, 404 for an unknown vehicle, 503 when there is no data yet: a client can tell what went wrong.
 - **CSV files.** Portable and easy to inspect for a demo; see the roadmap for what replaces them at scale.
 
 ## Limitations
@@ -122,10 +167,12 @@ Outputs appear in `data/` and `reports/`. Set `ANON_SALT` to your own secret for
 - Real batteries are not linear (a "knee" where degradation accelerates). The model would underestimate that.
 - The forecast band only reflects scatter around the line, not uncertainty about the line itself: treat it as optimistic.
 - The anonymization is a pseudonymization (salted hash). It does **not** guarantee anonymity; see `anonymize.py`.
+- The API is read-only over CSV files and has only an optional shared API key. Real use needs per-user authorization, because the endpoints return vehicle IDs.
 - Orchestration runs locally. Deploying to a scheduler/server is documented, not done.
 
 ## Roadmap
 
+- Serve the API from a database, with per-user authorization and rate limiting.
 - Replace the generator with real OBD telemetry ingestion and a schema contract per manufacturer.
 - Store the time series in a database built for it (e.g. PostgreSQL + TimescaleDB) instead of CSV.
 - Non-linear and per-cycle degradation models; compare against the linear baseline using the same backtest.
@@ -144,14 +191,16 @@ src/battery_pipeline/
   forecast.py     forecast and honest backtest
   recommend.py    rule-based recommendations (ES/EN)
   anonymize.py    salted-hash anonymized dataset
+  api.py          read-only REST API (FastAPI)
   charts.py       the three report charts
   flows.py        Prefect flow and tasks
-  cli.py          python -m battery_pipeline run | schedule
-tests/            77 tests (cleaning, time series, outputs, end-to-end)
+  cli.py          python -m battery_pipeline run | schedule | serve
+tests/            100 tests (cleaning, time series, outputs, API, end-to-end)
 ```
 
 ## Tests
 
-`pytest` runs 77 tests: every cleaning rule has a test that fails if the rule is removed; the trend and forecast are checked
+`pytest` runs 100 tests: every cleaning rule has a test that fails if the rule is removed; the trend and forecast are checked
 against lines with a **known** slope; the backtest is checked to be a time split; and an end-to-end test runs the real
-Prefect flow, including a case where the quality gate must stop the pipeline.
+Prefect flow, including a case where the quality gate must stop the pipeline. The API tests query the real pipeline output:
+error codes, language, API key and picking up a new run without a restart.

@@ -1,4 +1,4 @@
-"""Command line entry point:  python -m battery_pipeline run | schedule"""
+"""Command line entry point:  python -m battery_pipeline run | schedule | serve"""
 from __future__ import annotations
 
 import argparse
@@ -20,7 +20,21 @@ def main(argv: list[str] | None = None) -> None:
     sched = sub.add_parser("schedule", help="run the pipeline on a cron schedule (keeps running)")
     sched.add_argument("--cron", default="0 6 * * *", help='cron expression, default "0 6 * * *"')
 
+    serve = sub.add_parser("serve", help="start the REST API over the pipeline output")
+    serve.add_argument("--host", default="127.0.0.1")
+    serve.add_argument("--port", type=int, default=8000)
+    serve.add_argument("--root", default=None, help="project root with the pipeline output")
+
     args = parser.parse_args(argv)
+
+    if args.command == "serve":
+        import uvicorn
+        if args.root:
+            os.environ["BATTERY_PIPELINE_ROOT"] = args.root
+        print(f"API docs: http://{args.host}:{args.port}/docs")
+        uvicorn.run("battery_pipeline.api:app", host=args.host, port=args.port)
+        return
+
     from .flows import battery_pipeline, serve_on_schedule   # import after the env var is set
 
     if args.command == "run":

@@ -5,7 +5,7 @@
 Un pipeline de datos pequeño pero completo para **telemetría de baterías de vehículos eléctricos**: entran lecturas
 desordenadas de varios fabricantes; salen datos limpios, una **tendencia del estado de salud y una previsión a 6 meses por
 vehículo**, un dataset anonimizado y recomendaciones en lenguaje claro. Cada paso está orquestado con **Prefect**,
-protegido por una **puerta de calidad** y cubierto por **77 tests automáticos**.
+protegido por una **puerta de calidad**, expuesto mediante una **API REST con FastAPI** y cubierto por **100 tests automáticos**.
 
 > **Los datos son sintéticos.** Un generador simula dos fabricantes y después rompe los datos a propósito de las formas en
 > que se rompe la telemetría real. Lo que demuestra este proyecto es el pipeline. Los números de abajo prueban que funciona
@@ -36,6 +36,9 @@ flowchart LR
   F --> RE[("consumers / recommendations")]
   F --> AN[("consumers / anonymized")]
   FC --> FO[("consumers / forecast")]
+  D --> API["API REST<br/>FastAPI"]
+  FO --> API
+  RE --> API
 ```
 
 | Capa | Carpeta | Qué contiene |
@@ -95,12 +98,53 @@ pip install -e ".[dev]"
 
 python -m battery_pipeline run                            # ejecuta todo el pipeline
 python -m battery_pipeline run --vehicles 40 --days 365   # una flota más grande
-python -m pytest                                          # 77 tests
+python -m battery_pipeline serve                          # API REST en http://127.0.0.1:8000/docs
+python -m pytest                                          # 100 tests
 python -m battery_pipeline schedule --cron "0 6 * * *"    # cada día a las 06:00 (queda en ejecución)
 ```
 
 Las salidas aparecen en `data/` y `reports/`. Define `ANON_SALT` con tu propio secreto para el fichero anonimizado
 (si no, se usa una sal de demostración y se muestra un aviso).
+
+## API REST
+
+El pipeline produce los datos; un pequeño servicio **FastAPI** los sirve. No calcula nada: lee los ficheros que escribió el
+pipeline (y los vuelve a leer cuando una nueva ejecución los sustituye), así que un cliente de la API ve exactamente los
+números de los informes.
+
+```bash
+python -m battery_pipeline serve        # y abre http://127.0.0.1:8000/docs
+```
+
+| Endpoint | Devuelve |
+|---|---|
+| `GET /health` | ¿Está el servicio activo, ha producido datos el pipeline y son sintéticos? (nunca pide clave) |
+| `GET /vehicles?status=WATCH&limit=10` | Vehículos, de mayor a menor degradación, con filtro opcional por estado |
+| `GET /vehicles/{id}/health?lang=es` | Estado de salud, ritmo de degradación, previsión a 6 meses y una recomendación (`es` / `en`) |
+| `GET /vehicles/{id}/forecast?days=90` | Previsión del estado de salud con su banda, de 1 a 180 días |
+| `GET /fleet/summary` | Recuento por estado, vehículo que más y menos se degrada y cómo se evaluó la previsión |
+| `GET /quality` | El informe de calidad de datos de la última ejecución |
+
+```bash
+curl "http://127.0.0.1:8000/vehicles/B-006/health?lang=es"
+```
+
+```json
+{
+  "vehicle_id": "B-006",
+  "status": "WATCH",
+  "soh_current": 88.38,
+  "degradation_rate_pct_30d": 1.5,
+  "soh_in_6_months": 79.17,
+  "temp_max": 49.52,
+  "days_active": 180,
+  "recommendation": "Tu batería está en observación. Cuida las condiciones de carga y temperatura. Ha llegado a 50 °C: evita cargar o aparcar al sol."
+}
+```
+
+Comportamiento que conviene conocer: un ID mal formado (`A-1`) da **422** y uno desconocido **404**, nunca un error del servidor;
+si el pipeline aún no se ha ejecutado, los endpoints de datos responden **503** con el comando que hay que lanzar; los IDs no
+distinguen mayúsculas. Si defines `API_KEY`, todos los endpoints excepto `/health` la exigen en la cabecera `X-API-Key`.
 
 ## Decisiones de diseño
 
@@ -113,6 +157,8 @@ Las salidas aparecen en `data/` y `reports/`. Define `ANON_SALT` con tu propio s
 - **Reglas antes que IA en las recomendaciones.** Cada frase se puede rastrear hasta un número y un umbral. La salida
   estructurada (estado + motivos) es justo el contexto que recibiría un LLM si se añade más adelante.
 - **Todos los umbrales en `config.py`.** Cualquiera puede ver y cuestionar una regla de negocio sin leer la lógica.
+- **Una API que solo lee.** El pipeline es el único sitio donde se calculan los números; la API no puede contradecir los informes.
+- **Códigos de error claros.** 422 para una petición mal formada, 404 para un vehículo desconocido, 503 si aún no hay datos: el cliente sabe qué ha pasado.
 - **Ficheros CSV.** Portables y fáciles de inspeccionar en una demo; mira la hoja de ruta para ver qué los sustituye a escala.
 
 ## Limitaciones
@@ -121,10 +167,12 @@ Las salidas aparecen en `data/` y `reports/`. Define `ANON_SALT` con tu propio s
 - Las baterías reales no son lineales (hay un "codo" donde la degradación se acelera). El modelo lo subestimaría.
 - La banda de la previsión solo refleja la dispersión alrededor de la recta, no la incertidumbre sobre la propia recta: es optimista.
 - La anonimización es una seudonimización (hash con sal). **No** garantiza el anonimato; ver `anonymize.py`.
+- La API es de solo lectura sobre ficheros CSV y solo tiene una clave compartida opcional. Un uso real necesita autorización por usuario, porque los endpoints devuelven IDs de vehículo.
 - La orquestación se ejecuta en local. Desplegarla en un servidor o programador está documentado, no hecho.
 
 ## Hoja de ruta
 
+- Servir la API desde una base de datos, con autorización por usuario y límite de peticiones.
 - Sustituir el generador por ingesta de telemetría OBD real y un contrato de esquema por fabricante.
 - Guardar la serie temporal en una base de datos pensada para ello (p. ej. PostgreSQL + TimescaleDB) en lugar de CSV.
 - Modelos de degradación no lineales y por ciclo; compararlos con la recta usando el mismo backtest.
@@ -143,14 +191,15 @@ src/battery_pipeline/
   forecast.py     previsión y backtest honesto
   recommend.py    recomendaciones basadas en reglas (ES/EN)
   anonymize.py    dataset anonimizado con hash con sal
+  api.py          API REST de solo lectura (FastAPI)
   charts.py       los tres gráficos del informe
   flows.py        flujo y tareas de Prefect
-  cli.py          python -m battery_pipeline run | schedule
-tests/            77 tests (limpieza, series temporales, salidas, extremo a extremo)
+  cli.py          python -m battery_pipeline run | schedule | serve
+tests/            100 tests (limpieza, series temporales, salidas, API, extremo a extremo)
 ```
 
 ## Tests
 
-`pytest` ejecuta 77 tests: cada regla de limpieza tiene un test que falla si se quita la regla; la tendencia y la previsión se
+`pytest` ejecuta 100 tests: cada regla de limpieza tiene un test que falla si se quita la regla; la tendencia y la previsión se
 comprueban contra rectas de pendiente **conocida**; se verifica que el backtest divide por tiempo; y un test de extremo a extremo
 ejecuta el flujo real de Prefect, incluido un caso en el que la puerta de calidad debe detener el pipeline.
