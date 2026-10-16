@@ -1,0 +1,397 @@
+vehicle_id,timestamp,temp,temp_unit,state_of_health_pct,voltage_v,source,quarantine_reason
+A-002,21/10/2027 01:00,25.95,C,92.39,345.1,maker_a,future_timestamp
+A-004,29/04/2026 16:19,32.51,C,123.6,347.5,maker_a,soh_out_of_range
+A-001,30/05/2026 20:45,32.42,C,,346.2,maker_a,missing_soh
+A-001,01/05/2026 09:15,999.0,C,95.27,351.5,maker_a,temp_out_of_range
+A-005,14/07/2026 14:05,25.44,C,,340.0,maker_a,missing_soh
+A-010,02/08/2026 04:19,14.98,C,,345.3,maker_a,missing_soh
+A-009,26/09/2026 19:48,41.49,C,119.9,344.0,maker_a,soh_out_of_range
+A-003,20/07/2027 17:10,21.09,C,95.69,349.0,maker_a,future_timestamp
+A-004,16/05/2026 01:34,24.61,C,125.5,347.9,maker_a,soh_out_of_range
+A-008,30/06/2026 09:27,29.81,C,,346.3,maker_a,missing_soh
+A-003,23/04/2026 11:31,24.55,C,126.7,347.9,maker_a,soh_out_of_range
+A-001,29/05/2026 22:38,999.0,C,94.62,347.9,maker_a,temp_out_of_range
+A-008,05/05/2026 02:20,21.43,C,,346.0,maker_a,missing_soh
+A-008,24/08/2026 17:32,999.0,C,93.83,343.7,maker_a,temp_out_of_range
+A-006,27/06/2026 21:34,32.0,C,124.8,345.5,maker_a,soh_out_of_range
+A-010,13/05/2026 03:23,15.77,C,117.6,349.0,maker_a,soh_out_of_range
+A-004,16/06/2026 22:38,24.84,C,112.5,343.7,maker_a,soh_out_of_range
+A-005,06/09/2026 04:31,18.95,C,107.5,347.4,maker_a,soh_out_of_range
+A-012,21/09/2026 15:14,24.79,C,117.2,350.4,maker_a,soh_out_of_range
+A-002,22/05/2026 11:32,33.88,C,109.1,349.4,maker_a,soh_out_of_range
+A-006,26/06/2026 07:18,26.97,C,,344.6,maker_a,missing_soh
+A-003,28/05/2026 22:54,999.0,C,96.62,351.7,maker_a,temp_out_of_range
+A-001,12/05/2026 04:44,23.9,C,94.91,346.7,maker_a,duplicate
+A-001,22/10/2027 23:43,27.22,C,90.92,348.6,maker_a,future_timestamp
+A-001,21/09/2026 14:07,35.95,C,125.3,341.0,maker_a,soh_out_of_range
+A-003,09/07/2026 14:33,999.0,C,95.7,351.8,maker_a,temp_out_of_range
+A-001,05/06/2026 23:44,23.05,C,,343.7,maker_a,missing_soh
+A-005,19/09/2026 21:15,999.0,C,93.56,342.3,maker_a,temp_out_of_range
+A-008,20/04/2026 11:05,30.16,C,,351.5,maker_a,missing_soh
+A-010,28/05/2027 01:56,16.36,C,94.42,343.5,maker_a,future_timestamp
+A-010,26/05/2026 23:26,18.25,C,93.92,347.3,maker_a,duplicate
+A-011,29/09/2026 20:50,28.18,C,105.3,347.0,maker_a,soh_out_of_range
+A-006,30/05/2026 13:59,34.49,C,,350.4,maker_a,missing_soh
+A-005,28/09/2026 09:24,20.5,C,93.37,345.1,maker_a,duplicate
+A-002,04/06/2026 18:07,999.0,C,95.97,346.8,maker_a,temp_out_of_range
+A-011,20/05/2026 04:49,19.26,C,101.2,347.0,maker_a,soh_out_of_range
+A-007,20/09/2027 18:59,29.5,C,90.96,346.1,maker_a,future_timestamp
+A-010,24/07/2026 20:09,19.86,C,,347.2,maker_a,missing_soh
+A-004,26/04/2026 12:53,30.75,C,98.92,349.7,maker_a,duplicate
+A-004,10/10/2026 15:39,31.91,C,92.92,343.6,maker_a,duplicate
+A-004,12/07/2026 15:25,36.49,C,95.89,345.9,maker_a,duplicate
+A-012,20/07/2026 13:45,24.22,C,92.81,347.4,maker_a,duplicate
+A-005,30/08/2026 09:09,19.99,C,93.93,347.4,maker_a,duplicate
+A-011,15/08/2026 20:48,28.46,C,,352.3,maker_a,missing_soh
+A-003,05/10/2026 04:44,15.47,C,94.37,350.9,maker_a,duplicate
+A-004,19/06/2026 16:44,32.91,C,96.97,347.3,maker_a,duplicate
+A-001,15/08/2026 17:23,35.17,C,,349.5,maker_a,missing_soh
+A-009,28/08/2026 10:54,38.97,C,93.17,348.8,maker_a,duplicate
+A-008,13/06/2026 06:15,23.62,C,96.54,346.7,maker_a,duplicate
+A-003,14/08/2026 13:44,21.53,C,95.35,345.5,maker_a,duplicate
+A-008,24/04/2026 09:39,28.97,C,,347.0,maker_a,missing_soh
+A-001,22/10/2027 23:43,27.22,C,90.92,348.6,maker_a,future_timestamp
+A-011,14/06/2026 21:46,26.6,C,97.94,350.5,maker_a,duplicate
+A-008,26/08/2026 18:22,31.88,C,113.0,347.9,maker_a,soh_out_of_range
+A-010,15/06/2026 14:49,24.05,C,104.6,350.1,maker_a,soh_out_of_range
+A-007,14/06/2026 11:27,25.11,C,120.4,348.4,maker_a,soh_out_of_range
+A-011,17/04/2026 21:21,999.0,C,99.06,350.8,maker_a,temp_out_of_range
+A-007,16/07/2026 04:34,17.91,C,105.2,341.1,maker_a,soh_out_of_range
+A-011,18/10/2027 12:08,29.64,C,95.1,345.8,maker_a,future_timestamp
+A-008,20/07/2026 02:55,22.14,C,,345.8,maker_a,missing_soh
+A-006,08/07/2026 12:10,999.0,C,93.42,345.6,maker_a,temp_out_of_range
+A-006,26/09/2026 05:37,26.43,C,90.57,346.2,maker_a,duplicate
+A-010,15/09/2026 00:48,16.99,C,,340.5,maker_a,missing_soh
+A-009,27/08/2026 08:32,32.84,C,,347.4,maker_a,missing_soh
+A-001,12/10/2026 18:21,33.85,C,,348.4,maker_a,missing_soh
+A-011,22/07/2026 19:46,27.06,C,123.5,347.8,maker_a,soh_out_of_range
+A-006,15/06/2026 18:41,999.0,C,94.1,337.6,maker_a,temp_out_of_range
+A-007,18/06/2026 22:35,22.27,C,92.63,350.6,maker_a,duplicate
+A-003,21/04/2026 21:21,999.0,C,96.66,352.2,maker_a,temp_out_of_range
+A-002,03/08/2026 09:00,28.45,C,93.29,346.4,maker_a,duplicate
+A-009,06/05/2026 03:22,32.53,C,,344.0,maker_a,missing_soh
+A-004,22/07/2026 15:26,31.01,C,,347.6,maker_a,missing_soh
+A-011,05/10/2026 00:58,21.95,C,94.29,350.1,maker_a,duplicate
+A-003,22/04/2026 02:07,12.35,C,,348.4,maker_a,missing_soh
+A-012,09/05/2026 13:42,23.06,C,,345.9,maker_a,missing_soh
+A-011,20/08/2026 17:08,999.0,C,95.89,347.0,maker_a,temp_out_of_range
+A-007,16/04/2026 11:57,24.7,C,94.35,349.5,maker_a,duplicate
+A-001,14/09/2026 17:10,33.5,C,129.1,344.6,maker_a,soh_out_of_range
+A-002,21/05/2026 00:31,25.66,C,96.27,350.0,maker_a,duplicate
+A-005,26/05/2026 11:30,25.08,C,96.13,347.6,maker_a,duplicate
+A-011,29/05/2026 01:26,22.92,C,,347.1,maker_a,missing_soh
+A-009,04/09/2026 09:42,35.49,C,92.76,343.8,maker_a,duplicate
+A-009,02/07/2026 00:34,32.27,C,105.7,346.0,maker_a,soh_out_of_range
+A-012,04/05/2026 15:14,26.9,C,94.86,347.8,maker_a,duplicate
+A-004,13/05/2026 15:46,33.2,C,112.2,351.9,maker_a,soh_out_of_range
+A-012,16/09/2026 00:21,14.76,C,91.87,351.3,maker_a,duplicate
+A-007,23/09/2026 15:22,30.15,C,89.58,339.0,maker_a,duplicate
+A-005,10/10/2026 12:51,24.77,C,93.67,348.0,maker_a,duplicate
+A-012,29/09/2026 20:27,23.76,C,,344.1,maker_a,missing_soh
+A-011,10/06/2026 14:39,30.33,C,98.12,351.4,maker_a,duplicate
+A-009,12/08/2026 10:43,40.63,C,93.56,347.9,maker_a,duplicate
+A-006,15/06/2026 16:40,35.7,C,94.12,344.4,maker_a,duplicate
+A-002,18/06/2026 12:09,32.98,C,111.3,345.9,maker_a,soh_out_of_range
+A-004,13/06/2026 23:16,25.46,C,108.5,348.7,maker_a,soh_out_of_range
+A-007,16/08/2026 19:57,26.2,C,110.8,348.0,maker_a,soh_out_of_range
+A-005,21/05/2026 09:54,21.03,C,96.34,350.9,maker_a,duplicate
+A-003,02/10/2026 01:46,999.0,C,94.5,342.4,maker_a,temp_out_of_range
+A-009,30/07/2026 17:26,42.17,C,94.48,345.6,maker_a,duplicate
+A-010,05/08/2026 08:49,18.82,C,92.57,343.7,maker_a,duplicate
+A-009,01/07/2026 06:27,31.48,C,95.75,344.2,maker_a,duplicate
+A-012,29/09/2026 09:23,21.49,C,91.61,344.9,maker_a,duplicate
+A-004,16/06/2026 22:38,24.84,C,112.5,343.7,maker_a,soh_out_of_range
+A-001,28/06/2026 20:52,28.81,C,93.65,343.9,maker_a,duplicate
+A-010,13/07/2026 22:50,18.83,C,93.09,348.2,maker_a,duplicate
+A-005,04/05/2026 12:30,999.0,C,96.64,346.2,maker_a,temp_out_of_range
+A-012,08/09/2026 16:34,999.0,C,91.97,350.5,maker_a,temp_out_of_range
+A-002,27/06/2026 18:37,33.98,C,94.83,346.0,maker_a,duplicate
+A-007,02/05/2026 18:46,29.54,C,124.0,347.3,maker_a,soh_out_of_range
+A-006,25/07/2026 00:14,26.77,C,113.9,346.7,maker_a,soh_out_of_range
+A-010,20/05/2026 03:35,16.23,C,93.92,343.5,maker_a,duplicate
+A-012,29/06/2026 07:19,15.82,C,,343.9,maker_a,missing_soh
+A-003,04/09/2026 11:23,23.84,C,94.87,344.4,maker_a,duplicate
+A-001,28/04/2026 07:06,25.44,C,107.3,351.9,maker_a,soh_out_of_range
+A-001,12/11/2027 21:16,29.24,C,90.4,343.5,maker_a,future_timestamp
+A-007,02/10/2026 02:49,18.07,C,123.7,345.5,maker_a,soh_out_of_range
+A-010,05/09/2026 02:02,14.97,C,122.7,345.1,maker_a,soh_out_of_range
+A-007,07/10/2026 08:41,23.46,C,89.38,344.5,maker_a,duplicate
+A-009,22/07/2026 08:00,36.36,C,,348.4,maker_a,missing_soh
+A-010,16/06/2026 16:27,27.72,C,93.63,343.8,maker_a,duplicate
+A-009,21/09/2027 12:14,40.12,C,93.43,345.4,maker_a,future_timestamp
+A-003,10/06/2026 10:56,21.21,C,101.7,346.3,maker_a,soh_out_of_range
+A-004,24/04/2026 23:28,24.49,C,121.8,347.9,maker_a,soh_out_of_range
+A-002,13/06/2026 20:57,28.75,C,,350.4,maker_a,missing_soh
+A-005,26/04/2026 22:40,19.8,C,,343.8,maker_a,missing_soh
+A-010,13/10/2027 18:47,25.71,C,91.48,340.7,maker_a,future_timestamp
+A-003,31/05/2027 14:59,24.12,C,96.27,354.8,maker_a,future_timestamp
+A-002,11/05/2026 19:09,31.83,C,96.55,348.5,maker_a,duplicate
+A-010,10/10/2026 11:17,22.35,C,126.0,345.3,maker_a,soh_out_of_range
+A-002,13/05/2026 19:50,34.77,C,111.9,343.0,maker_a,soh_out_of_range
+A-010,26/08/2026 10:18,22.17,C,116.3,343.7,maker_a,soh_out_of_range
+A-008,15/08/2026 04:49,22.53,C,94.14,346.5,maker_a,duplicate
+A-006,08/09/2026 01:30,23.91,C,91.01,346.0,maker_a,duplicate
+A-004,03/05/2026 05:14,23.13,C,98.43,347.9,maker_a,duplicate
+A-002,27/06/2026 00:16,23.95,C,118.0,345.2,maker_a,soh_out_of_range
+A-007,08/06/2026 00:17,18.28,C,92.54,343.6,maker_a,duplicate
+A-008,13/06/2026 18:27,34.19,C,,352.8,maker_a,missing_soh
+A-011,05/08/2026 00:20,23.69,C,,351.7,maker_a,missing_soh
+A-006,02/05/2026 02:28,25.16,C,,346.2,maker_a,missing_soh
+A-004,11/10/2026 22:15,25.18,C,92.63,346.6,maker_a,duplicate
+A-011,21/05/2026 08:29,26.82,C,113.1,351.5,maker_a,soh_out_of_range
+A-002,01/08/2026 00:00,25.58,C,94.31,348.9,maker_a,duplicate
+A-001,06/09/2026 10:39,28.99,C,,343.6,maker_a,missing_soh
+A-011,08/06/2026 06:21,19.7,C,97.57,347.3,maker_a,duplicate
+A-006,22/07/2026 10:00,30.36,C,92.87,344.4,maker_a,duplicate
+A-009,17/05/2026 08:51,35.2,C,98.14,346.7,maker_a,duplicate
+A-010,21/04/2026 01:26,18.75,C,95.02,347.1,maker_a,duplicate
+A-009,07/08/2026 06:36,30.57,C,93.89,343.9,maker_a,duplicate
+A-001,14/09/2026 23:25,999.0,C,91.04,346.3,maker_a,temp_out_of_range
+A-008,28/07/2026 04:55,22.04,C,95.05,348.7,maker_a,duplicate
+A-009,20/09/2026 22:13,999.0,C,91.62,344.9,maker_a,temp_out_of_range
+A-011,21/04/2026 08:28,24.53,C,99.41,352.9,maker_a,duplicate
+A-010,12/10/2026 10:58,22.98,C,,342.5,maker_a,missing_soh
+A-006,30/09/2026 15:59,35.64,C,89.89,347.5,maker_a,duplicate
+A-002,08/09/2026 07:44,25.23,C,93.07,346.4,maker_a,duplicate
+A-002,04/10/2026 19:39,34.83,C,102.1,347.7,maker_a,soh_out_of_range
+A-001,11/06/2027 07:18,26.69,C,95.31,348.5,maker_a,future_timestamp
+A-005,13/09/2026 11:39,24.83,C,94.01,346.7,maker_a,duplicate
+A-003,29/04/2026 08:23,16.94,C,,348.4,maker_a,missing_soh
+A-006,09/09/2026 22:35,29.43,C,90.77,344.1,maker_a,duplicate
+A-010,18/04/2026 19:07,23.21,C,94.21,347.1,maker_a,duplicate
+A-010,11/05/2026 07:46,18.86,C,94.21,349.1,maker_a,duplicate
+A-002,17/04/2026 12:10,34.73,C,97.49,349.1,maker_a,duplicate
+A-012,05/10/2026 00:15,999.0,C,91.75,340.5,maker_a,temp_out_of_range
+A-006,06/10/2026 16:00,34.86,C,89.86,341.6,maker_a,duplicate
+A-003,16/09/2026 05:45,999.0,C,94.45,351.1,maker_a,temp_out_of_range
+A-003,30/06/2026 15:10,25.09,C,95.89,350.7,maker_a,duplicate
+A-007,19/04/2026 13:30,27.45,C,93.77,345.2,maker_a,duplicate
+A-007,27/09/2026 11:28,26.66,C,,344.5,maker_a,missing_soh
+A-003,12/09/2026 04:58,12.59,C,101.8,351.7,maker_a,soh_out_of_range
+A-009,01/08/2026 20:40,36.88,C,93.94,346.7,maker_a,duplicate
+A-010,08/06/2026 19:07,22.57,C,93.59,343.9,maker_a,duplicate
+A-005,08/10/2026 08:17,20.39,C,93.81,344.4,maker_a,duplicate
+A-008,25/06/2026 10:26,30.03,C,95.86,344.2,maker_a,duplicate
+A-008,23/05/2026 06:53,22.57,C,96.87,351.5,maker_a,duplicate
+A-009,29/09/2026 10:49,40.6,C,106.9,349.1,maker_a,soh_out_of_range
+A-007,28/07/2026 03:01,18.65,C,91.42,345.4,maker_a,duplicate
+A-009,10/10/2026 03:34,31.73,C,,345.0,maker_a,missing_soh
+A-001,19/09/2026 02:09,999.0,C,90.88,348.3,maker_a,temp_out_of_range
+A-003,10/08/2026 23:02,13.84,C,95.46,342.5,maker_a,duplicate
+A-002,09/10/2026 22:31,28.13,C,91.36,343.9,maker_a,duplicate
+A-002,18/05/2026 10:11,32.7,C,96.47,348.6,maker_a,duplicate
+A-007,02/06/2026 02:06,18.59,C,92.61,347.1,maker_a,duplicate
+A-012,05/07/2026 07:33,14.81,C,93.23,349.0,maker_a,duplicate
+A-003,29/06/2026 17:43,27.01,C,,349.1,maker_a,missing_soh
+A-009,05/09/2026 05:43,32.64,C,92.47,344.2,maker_a,duplicate
+A-011,28/08/2026 23:38,19.52,C,,348.6,maker_a,missing_soh
+A-009,08/05/2026 17:46,42.93,C,,349.3,maker_a,missing_soh
+A-005,18/07/2026 01:04,15.72,C,,347.3,maker_a,missing_soh
+A-007,02/09/2026 03:36,17.82,C,,346.5,maker_a,missing_soh
+A-003,11/08/2026 18:32,24.37,C,95.4,347.9,maker_a,duplicate
+A-012,25/06/2027 05:23,14.54,C,94.28,348.3,maker_a,future_timestamp
+A-007,27/05/2026 01:05,17.87,C,129.3,343.3,maker_a,soh_out_of_range
+ B-006,2026-07-19T07:50:00,1830.2,F,92.2,350.9,maker_b,temp_out_of_range
+B-001,2026-07-07T12:50:00,1830.2,F,93.35,345.6,maker_b,temp_out_of_range
+b_008,2026-10-12T23:24:00,1830.2,F,90.71,342.7,maker_b,temp_out_of_range
+ B-008,2026-08-06T16:01:00,81.36,F,,345.6,maker_b,missing_soh
+B-007,2026-09-14T07:42:00,68.7,F,105.1,341.4,maker_b,soh_out_of_range
+B-001,2026-07-26T12:35:00,101.59,F,112.5,346.6,maker_b,soh_out_of_range
+b_007,2026-06-28T05:51:00,63.37,F,,346.8,maker_b,missing_soh
+b_002,2026-06-15T06:53:00,57.09,F,,346.1,maker_b,missing_soh
+b_009,2026-04-29T22:04:00,72.28,F,99.8,350.3,maker_b,duplicate
+ B-002,2027-09-19T04:19:00,63.82,F,92.81,345.6,maker_b,future_timestamp
+ B-011,2026-07-12T20:46:00,1830.2,F,96.4,348.3,maker_b,temp_out_of_range
+ B-004,2026-04-25T23:35:00,79.83,F,100.04,348.8,maker_b,soh_out_of_range
+b_004,2026-04-19T20:01:00,81.61,F,,349.6,maker_b,missing_soh
+ B-001,2027-09-12T06:05:00,82.22,F,92.51,348.0,maker_b,future_timestamp
+B-009,2026-04-26T11:35:00,82.92,F,118.4,348.4,maker_b,soh_out_of_range
+B-001,2026-05-26T07:49:00,85.66,F,122.3,348.2,maker_b,soh_out_of_range
+ B-003,2026-06-19T12:38:00,84.07,F,115.2,347.6,maker_b,soh_out_of_range
+ B-001,2026-05-13T14:02:00,105.98,F,,348.0,maker_b,missing_soh
+B-006,2026-06-04T12:06:00,111.92,F,94.48,347.4,maker_b,duplicate
+b_012,2026-06-11T20:49:00,94.69,F,107.5,349.7,maker_b,soh_out_of_range
+b_007,2026-08-25T13:45:00,80.67,F,,345.9,maker_b,missing_soh
+b_002,2026-08-03T08:33:00,69.44,F,,347.8,maker_b,missing_soh
+b_001,2026-05-02T22:06:00,86.32,F,,347.5,maker_b,missing_soh
+B-008,2026-09-22T23:17:00,65.37,F,104.7,350.0,maker_b,soh_out_of_range
+b_007,2027-05-26T21:10:00,76.05,F,95.72,351.5,maker_b,future_timestamp
+ B-011,2026-07-12T20:46:00,1830.2,F,96.4,348.3,maker_b,temp_out_of_range
+b_010,2026-07-19T06:25:00,80.47,F,,344.4,maker_b,missing_soh
+b_007,2026-06-07T00:42:00,67.59,F,,347.7,maker_b,missing_soh
+ B-011,2026-06-08T04:33:00,66.67,F,127.7,346.6,maker_b,soh_out_of_range
+ B-005,2026-05-05T21:36:00,95.27,F,97.02,349.2,maker_b,duplicate
+B-006,2026-07-03T18:11:00,113.45,F,,344.2,maker_b,missing_soh
+B-012,2026-05-20T14:45:00,97.95,F,,342.4,maker_b,missing_soh
+b_003,2026-06-26T01:47:00,68.92,F,103.1,345.7,maker_b,soh_out_of_range
+ B-009,2026-06-21T11:19:00,84.22,F,113.4,346.6,maker_b,soh_out_of_range
+ B-007,2026-05-02T02:18:00,64.13,F,95.49,348.4,maker_b,duplicate
+ B-001,2026-09-27T08:33:00,88.12,F,110.5,344.7,maker_b,soh_out_of_range
+ B-012,2026-06-26T17:51:00,97.18,F,93.46,345.0,maker_b,duplicate
+b_004,2026-04-16T05:02:00,72.84,F,100.17,346.2,maker_b,soh_out_of_range
+b_012,2026-10-09T19:11:00,94.93,F,89.54,344.9,maker_b,duplicate
+ B-003,2026-07-02T10:22:00,82.38,F,101.0,345.0,maker_b,soh_out_of_range
+B-004,2026-04-20T06:25:00,74.07,F,100.08,353.0,maker_b,soh_out_of_range
+ B-001,2026-04-19T09:13:00,1830.2,F,96.13,351.0,maker_b,temp_out_of_range
+B-004,2026-08-22T09:26:00,84.24,F,95.68,350.6,maker_b,duplicate
+b_003,2026-07-07T20:59:00,76.59,F,109.8,348.1,maker_b,soh_out_of_range
+B-004,2026-07-10T18:57:00,1830.2,F,97.2,354.2,maker_b,temp_out_of_range
+b_009,2026-08-13T15:24:00,85.33,F,129.2,348.3,maker_b,soh_out_of_range
+ B-011,2026-06-24T13:02:00,83.41,F,,347.2,maker_b,missing_soh
+ B-005,2027-05-28T14:04:00,101.14,F,96.55,349.2,maker_b,future_timestamp
+ B-011,2026-05-17T05:32:00,66.78,F,,348.4,maker_b,missing_soh
+ B-008,2026-09-27T10:08:00,72.75,F,90.82,347.4,maker_b,duplicate
+b_012,2026-05-19T11:12:00,1830.2,F,93.46,343.9,maker_b,temp_out_of_range
+b_009,2026-08-16T08:53:00,75.43,F,97.1,345.6,maker_b,duplicate
+b_002,2026-05-11T20:59:00,68.04,F,106.8,344.4,maker_b,soh_out_of_range
+ B-004,2026-06-03T03:30:00,66.45,F,,349.8,maker_b,missing_soh
+b_001,2026-10-01T16:52:00,95.13,F,90.62,346.1,maker_b,duplicate
+B-008,2026-06-19T23:59:00,68.83,F,118.0,345.9,maker_b,soh_out_of_range
+b_005,2026-06-12T22:20:00,88.3,F,,345.4,maker_b,missing_soh
+B-004,2026-08-21T04:05:00,73.22,F,95.43,345.5,maker_b,duplicate
+B-002,2026-07-04T00:33:00,60.26,F,92.8,349.1,maker_b,duplicate
+b_007,2026-10-11T11:04:00,82.51,F,90.86,347.3,maker_b,duplicate
+B-008,2026-08-03T06:33:00,64.47,F,,343.1,maker_b,missing_soh
+ B-008,2026-06-20T07:22:00,66.78,F,93.14,345.1,maker_b,duplicate
+b_011,2027-09-09T04:17:00,65.05,F,96.02,345.6,maker_b,future_timestamp
+B-003,2026-08-07T16:17:00,85.95,F,,346.7,maker_b,missing_soh
+ B-007,2026-07-05T13:05:00,1830.2,F,93.8,350.3,maker_b,temp_out_of_range
+ B-010,2026-08-18T10:16:00,85.93,F,90.55,345.8,maker_b,duplicate
+B-011,2026-09-05T03:34:00,65.73,F,95.1,349.3,maker_b,duplicate
+B-003,2026-05-27T16:53:00,85.17,F,,347.4,maker_b,missing_soh
+B-006,2026-08-04T01:10:00,93.0,F,,348.2,maker_b,missing_soh
+ B-001,2026-07-16T23:24:00,85.96,F,93.25,344.9,maker_b,duplicate
+B-008,2026-06-24T13:06:00,82.62,F,120.2,347.3,maker_b,soh_out_of_range
+b_009,2026-10-11T15:18:00,89.83,F,117.6,345.4,maker_b,soh_out_of_range
+ B-004,2026-08-23T09:03:00,80.8,F,95.91,349.7,maker_b,duplicate
+b_002,2026-07-04T02:00:00,62.2,F,,350.2,maker_b,missing_soh
+B-009,2026-07-14T03:41:00,1830.2,F,97.69,344.4,maker_b,temp_out_of_range
+ B-009,2026-07-21T23:45:00,78.03,F,97.06,349.8,maker_b,duplicate
+B-011,2026-08-16T16:11:00,85.32,F,,350.3,maker_b,missing_soh
+b_005,2026-06-15T06:53:00,81.1,F,95.02,342.4,maker_b,duplicate
+B-011,2026-10-12T10:54:00,80.2,F,93.74,346.5,maker_b,duplicate
+B-001,2026-04-19T02:12:00,79.3,F,96.63,345.1,maker_b,duplicate
+b_002,2026-10-11T11:21:00,71.92,F,126.1,346.1,maker_b,soh_out_of_range
+B-012,2026-08-21T22:48:00,85.6,F,91.13,344.2,maker_b,duplicate
+B-003,2026-10-11T13:22:00,1830.2,F,90.72,344.2,maker_b,temp_out_of_range
+B-009,2026-06-21T08:23:00,75.97,F,,345.1,maker_b,missing_soh
+ B-003,2026-09-19T19:42:00,83.59,F,,346.3,maker_b,missing_soh
+ B-010,2026-05-18T17:41:00,93.2,F,110.7,346.4,maker_b,soh_out_of_range
+b_009,2026-06-19T12:52:00,82.18,F,98.2,351.3,maker_b,duplicate
+B-003,2026-09-08T16:40:00,86.02,F,,349.3,maker_b,missing_soh
+b_002,2026-04-24T23:04:00,61.99,F,93.87,346.1,maker_b,duplicate
+B-003,2026-05-01T22:43:00,75.18,F,113.8,343.7,maker_b,soh_out_of_range
+ B-007,2026-09-18T11:47:00,78.21,F,91.38,345.7,maker_b,duplicate
+B-001,2026-10-10T13:42:00,97.43,F,124.3,344.5,maker_b,soh_out_of_range
+B-007,2026-06-05T03:25:00,64.83,F,128.4,346.1,maker_b,soh_out_of_range
+ B-006,2026-08-07T04:58:00,91.99,F,,345.0,maker_b,missing_soh
+B-010,2026-05-16T22:04:00,82.49,F,93.0,342.6,maker_b,duplicate
+b_005,2026-07-13T05:03:00,81.88,F,94.24,351.5,maker_b,duplicate
+ B-012,2026-10-12T15:01:00,96.76,F,125.2,345.8,maker_b,soh_out_of_range
+ B-006,2026-08-22T13:07:00,1830.2,F,90.44,341.4,maker_b,temp_out_of_range
+b_009,2026-07-06T20:31:00,80.2,F,97.77,348.3,maker_b,duplicate
+ B-001,2026-04-24T12:19:00,102.25,F,95.74,349.2,maker_b,duplicate
+b_002,2026-07-06T02:20:00,60.19,F,,345.5,maker_b,missing_soh
+ B-007,2026-05-09T19:56:00,83.05,F,95.47,348.5,maker_b,duplicate
+ B-004,2026-06-16T14:17:00,96.37,F,,346.8,maker_b,missing_soh
+ B-007,2027-10-11T03:01:00,64.89,F,92.21,348.4,maker_b,future_timestamp
+B-002,2026-08-23T03:21:00,54.61,F,120.6,344.4,maker_b,soh_out_of_range
+B-008,2026-04-22T04:02:00,55.44,F,93.96,347.9,maker_b,duplicate
+b_005,2026-04-19T13:33:00,103.06,F,127.6,349.0,maker_b,soh_out_of_range
+ B-009,2026-04-23T00:50:00,1830.2,F,99.27,349.9,maker_b,temp_out_of_range
+b_006,2026-05-25T13:14:00,109.63,F,95.19,343.1,maker_b,duplicate
+b_006,2026-07-18T06:49:00,1830.2,F,92.38,343.2,maker_b,temp_out_of_range
+b_003,2026-07-08T18:31:00,79.11,F,92.8,349.7,maker_b,duplicate
+B-004,2026-04-26T20:12:00,84.45,F,100.13,353.9,maker_b,soh_out_of_range
+b_011,2026-09-16T20:54:00,81.1,F,94.88,346.0,maker_b,duplicate
+b_005,2026-05-12T07:52:00,90.84,F,96.41,351.4,maker_b,duplicate
+ B-010,2026-08-23T22:57:00,80.76,F,90.08,343.2,maker_b,duplicate
+B-003,2026-05-05T08:45:00,69.55,F,94.44,344.1,maker_b,duplicate
+ B-007,2026-08-07T12:00:00,87.67,F,106.9,343.4,maker_b,soh_out_of_range
+ B-005,2026-07-06T11:13:00,98.58,F,94.25,346.9,maker_b,duplicate
+ B-011,2026-06-21T02:19:00,64.56,F,128.1,345.0,maker_b,soh_out_of_range
+b_009,2026-07-10T12:39:00,83.61,F,,350.9,maker_b,missing_soh
+B-003,2026-07-15T18:30:00,83.68,F,92.69,346.1,maker_b,duplicate
+B-011,2026-04-17T09:03:00,1830.2,F,98.77,349.5,maker_b,temp_out_of_range
+b_007,2027-07-08T21:20:00,77.47,F,94.62,348.2,maker_b,future_timestamp
+b_006,2026-10-06T22:52:00,100.76,F,,340.1,maker_b,missing_soh
+ B-004,2026-06-06T14:10:00,92.48,F,98.17,354.1,maker_b,duplicate
+ B-001,2026-08-07T02:36:00,81.39,F,,352.0,maker_b,missing_soh
+ B-011,2026-07-04T14:25:00,1830.2,F,96.97,349.2,maker_b,temp_out_of_range
+b_001,2026-05-22T07:35:00,78.01,F,95.27,345.4,maker_b,duplicate
+ B-009,2026-05-30T16:51:00,82.99,F,98.46,348.1,maker_b,duplicate
+ B-006,2026-07-11T01:20:00,92.89,F,123.2,348.6,maker_b,soh_out_of_range
+b_010,2026-05-31T20:23:00,87.37,F,,343.3,maker_b,missing_soh
+ B-002,2026-07-26T13:06:00,1830.2,F,92.78,346.0,maker_b,temp_out_of_range
+b_010,2026-07-20T03:17:00,70.21,F,91.57,346.0,maker_b,duplicate
+ B-011,2026-06-08T04:33:00,66.67,F,127.7,346.6,maker_b,soh_out_of_range
+B-003,2026-04-29T18:43:00,82.02,F,94.71,346.7,maker_b,duplicate
+b_003,2026-08-15T04:18:00,62.29,F,120.7,343.4,maker_b,soh_out_of_range
+B-001,2026-06-18T15:33:00,104.5,F,94.24,348.3,maker_b,duplicate
+ B-001,2026-05-29T21:59:00,1830.2,F,94.97,347.9,maker_b,temp_out_of_range
+ B-006,2026-08-21T01:31:00,88.63,F,90.6,345.2,maker_b,duplicate
+ B-004,2026-09-02T10:08:00,84.31,F,,348.1,maker_b,missing_soh
+B-012,2026-05-26T23:28:00,1830.2,F,93.37,341.8,maker_b,temp_out_of_range
+B-010,2026-10-09T12:47:00,95.18,F,,348.1,maker_b,missing_soh
+ B-009,2026-09-15T17:19:00,87.85,F,96.32,350.4,maker_b,duplicate
+ B-010,2026-09-19T11:08:00,87.37,F,89.61,345.4,maker_b,duplicate
+b_003,2026-08-23T17:52:00,86.23,F,92.2,349.1,maker_b,duplicate
+ B-010,2026-07-10T12:39:00,86.02,F,,343.2,maker_b,missing_soh
+B-001,2027-07-20T19:30:00,97.5,F,94.37,350.4,maker_b,future_timestamp
+b_009,2026-06-19T11:47:00,1830.2,F,97.69,349.0,maker_b,temp_out_of_range
+ B-009,2026-08-25T04:00:00,67.03,F,96.6,344.1,maker_b,duplicate
+B-011,2026-09-30T12:50:00,83.5,F,94.62,345.7,maker_b,duplicate
+B-003,2027-09-30T14:55:00,81.34,F,91.72,346.0,maker_b,future_timestamp
+ B-008,2026-07-28T20:15:00,72.52,F,92.56,344.6,maker_b,duplicate
+b_004,2026-04-22T06:32:00,77.14,F,118.7,353.4,maker_b,soh_out_of_range
+B-004,2026-04-24T06:23:00,74.68,F,109.9,346.7,maker_b,soh_out_of_range
+b_008,2026-09-08T20:06:00,75.33,F,,345.2,maker_b,missing_soh
+ B-011,2026-08-19T15:10:00,87.89,F,,347.1,maker_b,missing_soh
+B-008,2026-05-16T03:27:00,58.62,F,93.77,345.6,maker_b,duplicate
+b_007,2026-05-09T14:08:00,82.72,F,96.03,349.6,maker_b,duplicate
+B-006,2026-06-07T12:34:00,114.44,F,120.5,347.4,maker_b,soh_out_of_range
+B-005,2026-04-18T17:21:00,101.34,F,127.6,343.4,maker_b,soh_out_of_range
+ B-005,2026-07-08T20:15:00,92.8,F,93.84,342.2,maker_b,duplicate
+b_009,2026-09-10T02:12:00,62.94,F,129.7,351.2,maker_b,soh_out_of_range
+ B-008,2026-07-21T21:29:00,1830.2,F,92.44,341.9,maker_b,temp_out_of_range
+b_012,2026-07-07T09:24:00,88.47,F,121.1,348.5,maker_b,soh_out_of_range
+B-011,2026-06-07T17:34:00,86.81,F,107.8,349.7,maker_b,soh_out_of_range
+B-011,2026-09-21T02:31:00,67.08,F,,347.2,maker_b,missing_soh
+ B-004,2026-10-09T16:16:00,91.62,F,94.25,347.8,maker_b,duplicate
+b_011,2026-07-09T10:41:00,80.49,F,96.85,351.4,maker_b,duplicate
+ B-005,2027-06-19T11:17:00,103.19,F,96.13,347.0,maker_b,future_timestamp
+b_008,2026-09-20T03:52:00,63.48,F,91.6,346.0,maker_b,duplicate
+B-008,2026-09-19T04:25:00,60.84,F,91.42,343.2,maker_b,duplicate
+b_010,2027-07-23T16:17:00,93.99,F,91.9,343.8,maker_b,future_timestamp
+B-010,2026-08-16T01:52:00,71.92,F,90.12,340.9,maker_b,duplicate
+b_005,2026-06-02T10:30:00,91.72,F,103.7,348.2,maker_b,soh_out_of_range
+ B-011,2026-08-04T02:15:00,68.77,F,95.83,352.5,maker_b,duplicate
+b_005,2026-08-08T11:46:00,94.19,F,,348.8,maker_b,missing_soh
+ B-007,2026-06-15T02:12:00,56.57,F,94.05,347.7,maker_b,duplicate
+B-009,2026-06-02T21:13:00,79.29,F,,352.1,maker_b,missing_soh
+b_009,2026-04-26T07:52:00,70.84,F,99.08,350.5,maker_b,duplicate
+ B-010,2026-10-10T21:20:00,80.46,F,88.62,345.5,maker_b,duplicate
+B-004,2026-07-17T04:55:00,71.98,F,96.67,345.6,maker_b,duplicate
+B-004,2026-08-06T23:19:00,77.94,F,96.66,347.5,maker_b,duplicate
+ B-011,2026-05-17T13:06:00,85.89,F,98.24,349.3,maker_b,duplicate
+B-009,2026-06-27T16:08:00,86.34,F,113.5,347.6,maker_b,soh_out_of_range
+ B-008,2026-05-16T12:23:00,82.63,F,93.56,346.0,maker_b,duplicate
+B-008,2026-09-10T09:12:00,69.01,F,91.57,345.5,maker_b,duplicate
+ B-010,2026-05-06T19:53:00,1830.2,F,93.48,350.5,maker_b,temp_out_of_range
+B-009,2026-09-27T23:00:00,67.84,F,,348.5,maker_b,missing_soh
+B-008,2026-04-16T12:48:00,80.69,F,94.76,349.3,maker_b,duplicate
+B-008,2026-08-30T09:49:00,70.43,F,91.47,348.5,maker_b,duplicate
+B-002,2026-10-07T19:45:00,71.71,F,91.92,344.2,maker_b,duplicate
+B-009,2026-05-31T00:24:00,65.01,F,98.46,346.1,maker_b,duplicate
+B-010,2026-07-20T05:22:00,69.04,F,91.15,345.1,maker_b,duplicate
+ B-001,2026-05-22T09:23:00,91.11,F,95.09,349.3,maker_b,duplicate
+b_002,2027-11-12T23:55:00,62.65,F,91.4,343.2,maker_b,future_timestamp
+B-001,2026-08-07T22:12:00,89.89,F,92.43,347.0,maker_b,duplicate
+B-008,2026-05-04T05:30:00,56.97,F,93.96,347.8,maker_b,duplicate
+b_006,2026-09-11T12:33:00,116.44,F,89.58,345.3,maker_b,duplicate
+b_012,2026-05-03T17:56:00,93.92,F,94.32,347.5,maker_b,duplicate
+b_004,2026-04-16T07:19:00,77.61,F,100.46,346.8,maker_b,soh_out_of_range
+B-001,2026-05-05T19:31:00,96.48,F,95.54,348.0,maker_b,duplicate
+ B-004,2026-10-02T01:54:00,79.23,F,,351.0,maker_b,missing_soh
+b_004,2026-05-23T20:36:00,85.69,F,98.48,350.1,maker_b,duplicate
+b_004,2026-07-06T16:44:00,94.78,F,113.3,350.2,maker_b,soh_out_of_range

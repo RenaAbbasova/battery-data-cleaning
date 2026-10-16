@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "battery-pipeline"
+version = "1.0.0"
+description = "EV battery telemetry pipeline: synthetic raw data -> clean -> time series -> consumers, orchestrated with Prefect."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.2", "numpy>=1.26", "matplotlib>=3.8", "prefect>=3.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

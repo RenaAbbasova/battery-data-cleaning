@@ -1,0 +1,14 @@
+{
+  "seed": 42,
+  "n_vehicles": 24,
+  "days": 180,
+  "start_date": "2026-04-16T00:00:00",
+  "injected_defects": {
+    "duplicates": 164,
+    "soh_out_of_range": 82,
+    "temp_out_of_range": 41,
+    "missing_soh": 82,
+    "future_timestamp": 24
+  },
+  "note": "SYNTHETIC data. Defects are injected on purpose to test the pipeline."
+}

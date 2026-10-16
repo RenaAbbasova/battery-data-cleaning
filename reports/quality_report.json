@@ -1,0 +1,36 @@
+{
+  "rows_raw": 8418,
+  "rows_clean": 8022,
+  "rows_quarantined": 396,
+  "quarantine_rate": 0.047,
+  "quarantined_by_reason": {
+    "duplicate": 160,
+    "soh_out_of_range": 87,
+    "missing_soh": 82,
+    "temp_out_of_range": 42,
+    "future_timestamp": 25
+  },
+  "by_source": {
+    "maker_b": {
+      "raw_rows": 4297,
+      "clean_rows": 4093,
+      "quarantined_rows": 204
+    },
+    "maker_a": {
+      "raw_rows": 4121,
+      "clean_rows": 3929,
+      "quarantined_rows": 192
+    }
+  },
+  "vehicles": 24,
+  "first_reading": "2026-04-16 00:13:00",
+  "last_reading": "2026-10-12 23:16:00",
+  "quality_gate_max_quarantine_rate": 0.15,
+  "synthetic_data_injected_defects": {
+    "duplicates": 164,
+    "soh_out_of_range": 82,
+    "temp_out_of_range": 41,
+    "missing_soh": 82,
+    "future_timestamp": 24
+  }
+}

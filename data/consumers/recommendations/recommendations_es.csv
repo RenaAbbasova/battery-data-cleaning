@@ -1,0 +1,25 @@
+vehicle_id,status,degradation_rate_pct_30d,temp_max,temp_range,recommendation
+B-006,WATCH,1.5,49.52,19.73,Tu batería está en observación. Cuida las condiciones de carga y temperatura. Ha llegado a 50 °C: evita cargar o aparcar al sol.
+A-009,WATCH,1.44,45.84,17.47,Tu batería está en observación. Cuida las condiciones de carga y temperatura. Ha llegado a 46 °C: evita cargar o aparcar al sol.
+A-006,WATCH,1.1,40.95,19.81,Tu batería está en observación. Cuida las condiciones de carga y temperatura.
+B-005,WATCH,1.06,41.33,17.31,Tu batería está en observación. Cuida las condiciones de carga y temperatura.
+A-008,WATCH,1.02,37.98,18.43,Tu batería está en observación. Cuida las condiciones de carga y temperatura.
+A-001,WATCH,1.01,39.29,20.24,Tu batería está en observación. Cuida las condiciones de carga y temperatura. La temperatura varía 20 °C: evita cargas rápidas en los extremos.
+A-004,WATCH,1.0,37.31,18.64,Tu batería está en observación. Cuida las condiciones de carga y temperatura.
+B-001,OK,0.98,41.6,17.41,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+B-004,OK,0.98,38.15,18.68,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+A-002,OK,0.95,38.98,19.03,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+B-010,OK,0.91,36.56,17.0,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+B-012,OK,0.9,39.95,18.64,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+B-007,OK,0.83,31.79,18.14,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+A-007,OK,0.8,32.25,17.13,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+A-011,OK,0.77,34.54,18.48,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+B-011,OK,0.76,33.19,17.04,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+B-003,OK,0.71,35.16,20.91,Tu batería mantiene un ritmo de desgaste normal. Sigue así. La temperatura varía 21 °C: evita cargas rápidas en los extremos.
+B-009,OK,0.64,33.85,17.94,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+B-008,OK,0.62,29.89,17.12,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+A-010,OK,0.6,30.39,19.25,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+A-005,OK,0.6,31.69,18.91,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+A-012,OK,0.56,29.69,19.2,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+B-002,OK,0.44,30.39,18.29,Tu batería mantiene un ritmo de desgaste normal. Sigue así.
+A-003,OK,0.4,28.94,20.33,Tu batería mantiene un ritmo de desgaste normal. Sigue así. La temperatura varía 20 °C: evita cargas rápidas en los extremos.

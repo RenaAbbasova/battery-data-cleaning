@@ -1,0 +1,28 @@
+{
+  "finished_at": "2026-10-15T15:41:27",
+  "rows_raw": 8418,
+  "rows_clean": 8022,
+  "rows_quarantined": 396,
+  "quarantine_rate": 0.047,
+  "vehicles": 24,
+  "status_counts": {
+    "OK": 17,
+    "WATCH": 7
+  },
+  "temperature_effect": {
+    "spearman_temp_vs_degradation": 0.92,
+    "vehicles": 24
+  },
+  "forecast_backtest": {
+    "vehicles_evaluated": 24,
+    "mean_mae_model_pct_points": 0.155,
+    "mean_mae_naive_pct_points": 0.638,
+    "share_vehicles_model_beats_naive": 1.0,
+    "test_fraction": 0.2
+  },
+  "charts": [
+    "quarantine_reasons.png",
+    "soh_forecast.png",
+    "temperature_vs_degradation.png"
+  ]
+}
